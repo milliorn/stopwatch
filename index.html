@@ -6,6 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stopwatch</title>
   </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      align-items: center;
+      background-image: url("https://source.unsplash.com/random/2560x1440");
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      font-family: \"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      justify-content: center;
+      width: 100%;
+    }
+
+    button {
+      border-radius: 10px;
+      border: 1px solid #f8f8f8;
+      margin: 0 0.2rem;
+      padding: 0.4rem 1rem;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #f8f8f8;
+    }
+
+    h1,
+    p {
+      color: #f8f8f8;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      max-width: 300px;
+      padding: 1rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .time {
+      font-size: 2rem;
+      padding: 1rem 0;
+    }
+  </style>
+
   <body>
     <div class="container">
       <h1>Stopwatch</h1>
