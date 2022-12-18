@@ -15,7 +15,7 @@
 
     body {
       align-items: center;
-      //background-image: url("https://source.unsplash.com/random/2560x1440");
+      /*background-image: url("https://source.unsplash.com/random/2560x1440");*/
       background-position: center;
       background-size: cover;
       display: flex;
@@ -61,14 +61,17 @@
     <div class="container">
       <h1>Stopwatch</h1>
       <p class="time">
-        <span id="minutes">00</span>: <span id="seconds">00</span>:
-        <span id="tens">00</span>
+        <span id="minutes">00</span>:<span id="seconds">00</span>:<span
+          id="tens"
+          >00</span
+        >
       </p>
       <button id="start">Start</button>
       <button id="stop">Stop</button>
       <button id="reset">Reset</button>
     </div>
   </body>
+
   <script>
     window.onload = function () {
       let minutes = 0;
@@ -115,7 +118,28 @@
         }
       };
 
-      
+      startBtn.onclick = () => {
+        // https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
+        clearInterval(interval);
+        // https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+        interval = setInterval(startTimer, 10);
+      };
+
+      stopBtn.onclick = () => {
+        clearInterval(interval);
+      };
+
+      resetBtn.onclick = () => {
+        clearInterval(interval);
+
+        minutes = "00";
+        seconds = "00";
+        tens = "00";
+
+        appendMinutes.innerHMTL = minutes;
+        appendSeconds.innerHTML = seconds;
+        appendTens.innerHTML = tens;
+      };
     };
   </script>
 </html>
